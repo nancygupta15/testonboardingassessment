@@ -47,12 +47,8 @@
                         <baseUrl>${baseUrl}</baseUrl>
                     </systemPropertyVariables>
                     <includes>
-                        <include>**/*LaunchTest.java</include>
-                        <include>**/*SmokeTest.java</include>
+                        <include>**/*Test.java</include>
                     </includes>
-                    <excludes>
-                        <exclude>MavenTest.java</exclude>
-                    </excludes>
                 </configuration>
             </plugin>
         </plugins>
