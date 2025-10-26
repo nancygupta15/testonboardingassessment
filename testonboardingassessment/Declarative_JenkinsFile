@@ -14,4 +14,10 @@ pipeline{
                               }
                       }
         }
+  post{
+        always{
+                echo 'Pipeline Finished!'
+                step([$class: 'JUnitResultArchiver', checksName: '', testResults: 'testonboardingassessment\\target\\surefire-reports\\*.xml'])
+              }
+      }
 }
