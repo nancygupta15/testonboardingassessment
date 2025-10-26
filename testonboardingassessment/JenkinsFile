@@ -4,7 +4,7 @@ git branch: 'main', url: 'https://github.com/nancygupta15/testonboardingassessme
 }
 stage('build'){
 dir('testonboardingassessment') {
-bat 'mvn clean test -Dbrowser=chrome'
+bat 'mvn clean install -Dbrowser=chrome'
 }
 }
 step([$class: 'JUnitResultArchiver', checksName: '', testResults: 'testonboardingassessment\\target\\surefire-reports\\*.xml'])
