@@ -1,11 +1,11 @@
 node{
 stage('checkout'){
-echo 'checking out!'
+git branch: 'main', url: 'https://github.com/nancygupta15/testonboardingassessment.git'
 }
 stage('build'){
-echo 'building!'
+dir('testonboardingassessment') {
+bat 'mvn clean test -Dbrowser=chrome'
 }
-stage('archive'){
-echo 'archiving!'
 }
+step([$class: 'JUnitResultArchiver', checksName: '', testResults: 'testonboardingassessment\\target\\surefire-reports\\*.xml'])
 }
