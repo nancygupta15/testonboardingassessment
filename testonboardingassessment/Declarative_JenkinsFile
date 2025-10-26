@@ -1,8 +1,8 @@
 pipeline{
-  agent any
-  stages{
-         stage('checkout'){
-                            steps{
+agent any
+stages{
+        stage('checkout'){
+                          steps {
                                   git branch: 'main', url: 'https://github.com/nancygupta15/testonboardingassessment.git'
                                  }
                           }
